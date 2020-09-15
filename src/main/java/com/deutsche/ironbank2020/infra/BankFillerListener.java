@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @RequiredArgsConstructor
-
 public class BankFillerListener {
 
     private final BankRepo bankRepo;
@@ -24,7 +23,5 @@ public class BankFillerListener {
     public void fillBank(){
         Bank bank = bankRepo.findAll().get(0);
         bank.setAmount(100);
-        bankRepo.save(bank);
-
     }
 }
