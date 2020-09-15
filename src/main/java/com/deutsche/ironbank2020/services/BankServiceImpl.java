@@ -17,7 +17,7 @@ public class BankServiceImpl implements BankService {
     private BankRepo bankRepo;
 
     @Autowired
-    private LoanValidator loanValidator;
+    private LoanValidatorService loanValidatorService;
 
     @Override
     public Bank getBank() {
@@ -33,6 +33,6 @@ public class BankServiceImpl implements BankService {
         if (loan.getAmount() > bank.getAmount()) {
             throw new NotEnoughMoneyException();
         }
-        return loanValidator.getAnswer(loan);
+        return loanValidatorService.getAnswer(loan);
     }
 }

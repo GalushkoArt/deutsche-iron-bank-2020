@@ -4,7 +4,7 @@ import com.deutsche.ironbank2020.dto.Loan;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoanValidatorImpl implements LoanValidator {
+public class LoanValidatorServiceImpl implements LoanValidatorService {
     @Override
     public String getAnswer(Loan loan) {
         if (loan.getUserName().toLowerCase().contains("stark")) {
